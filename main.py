@@ -98,8 +98,16 @@ class Ventana(QtWidgets.QWidget):
             print("frecuencia fundamental=",str(frec_fund))
 
             # La frecuencia media de la voz masculina es de 106 Hz y con un rango de 77 Hz a 482 Hz.
-            
             # En cuanto a la voz femenina su frecuencia es de 193 Hz, con un rango de 137 Hz a 634 Hz. 
+
+            # El discurso sonoro de un hombre adulto típico tendrá una frecuencia 
+            # fundamental de 85 a 180 Hz, y el de una mujer adulta típica de 165 a 255 Hz.
+            if (85<=frec_fund) and (frec_fund>=164):
+                self.ui.label_Status.setText("Voz de Hombre")
+            elif (180<=frec_fund) and (frec_fund>=255):
+                self.ui.label_Status.setText("Voz de Mujer")
+            else:
+                self.ui.label_Status.setText("No es posible analizarlo")
 
         except Exception as e:
             print("error en la grafica,"+str(e))
