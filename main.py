@@ -102,10 +102,21 @@ class Ventana(QtWidgets.QWidget):
 
             # El discurso sonoro de un hombre adulto típico tendrá una frecuencia 
             # fundamental de 85 a 180 Hz, y el de una mujer adulta típica de 165 a 255 Hz.
-            if (85<=frec_fund) and (frec_fund>=164):
-                self.ui.label_Status.setText("Voz de Hombre")
-            elif (180<=frec_fund) and (frec_fund>=255):
-                self.ui.label_Status.setText("Voz de Mujer")
+            if(1000>=frec_fund[0] and frec_fund[0]>=750):
+                print("A")
+                self.ui.label_Status.setText("A")
+            elif(750>frec_fund[0] and frec_fund[0]>=452):
+                print("E")
+                self.ui.label_Status.setText("E")
+            elif(452>frec_fund[0] and frec_fund[0]>=362):
+                print("O")
+                self.ui.label_Status.setText("O")
+            elif(362>frec_fund[0] and frec_fund[0]>=320):
+                print("I")
+                self.ui.label_Status.setText("I")    
+            elif(298>frec_fund[0] and frec_fund[0]>=0):
+                print("U")
+                self.ui.label_Status.setText("U")
             else:
                 self.ui.label_Status.setText("No es posible analizarlo")
 
