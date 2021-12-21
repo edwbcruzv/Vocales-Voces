@@ -108,7 +108,7 @@ class Ventana(QtWidgets.QWidget):
             self.ui.label_Status.setText("No se ha seleccionado ningun genero")
 
     def hombre(self,frec_fund):
-        if(1000>=frec_fund[0] and frec_fund[0]>=750):
+        if(1500>=frec_fund[0] and frec_fund[0]>=750):
             print("A")
             self.ui.label_Status.setText("A")
         elif(750>frec_fund[0] and frec_fund[0]>=452):
@@ -120,14 +120,30 @@ class Ventana(QtWidgets.QWidget):
         elif(362>frec_fund[0] and frec_fund[0]>=320):
             print("I")
             self.ui.label_Status.setText("I")    
-        elif(298>frec_fund[0] and frec_fund[0]>=0):
+        elif(320>frec_fund[0] and frec_fund[0]>=0):
             print("U")
             self.ui.label_Status.setText("U")
         else:
             self.ui.label_Status.setText("No es posible analizarlo")
 
     def mujer(self,frec_fund):
-        pass
+        if(1500>=frec_fund[0] and frec_fund[0]>=861):
+            print("A")
+            self.ui.label_Status.setText("A")
+        elif(861>frec_fund[0] and frec_fund[0]>=563):
+            print("O")
+            self.ui.label_Status.setText("O")
+        elif(563>frec_fund[0] and frec_fund[0]>=429):
+            print("E")
+            self.ui.label_Status.setText("E")
+        elif(429>frec_fund[0] and frec_fund[0]>=313):
+            print("I")
+            self.ui.label_Status.setText("I")    
+        elif(313>frec_fund[0] and frec_fund[0]>=0):
+            print("U")
+            self.ui.label_Status.setText("U")
+        else:
+            self.ui.label_Status.setText("No es posible analizarlo")
 
 ##*****INICIO DE TODO EL PROGRAMA
 if __name__=='__main__':
