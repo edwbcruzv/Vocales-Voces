@@ -16,7 +16,7 @@ class Microfono:
 
     def grabar(self):
         fs=44100
-        duration = 4  # seconds
+        duration = 3  # seconds
         print("Grabando...")
         myrecording = sd.rec(int(duration * fs), samplerate=fs, channels=2)
         sd.wait()

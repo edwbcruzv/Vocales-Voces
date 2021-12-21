@@ -86,42 +86,48 @@ class Ventana(QtWidgets.QWidget):
             print("no hay respuesta,"+str(e))
 
     def evaluar(self):
-        try:
-            self.fig_Frecuencias.axes.clear()
-            self.fig_Frecuencias.axes.set_xlabel('Frecuencia')
-            self.fig_Frecuencias.axes.set_ylabel('Magnitud')
-            self.fig_Frecuencias.axes.set_title('Secuencia 1')
-            
-            x1,y1,frec_fund=self.audio.graficaFFT()
-            self.fig_Frecuencias.axes.plot(x1,y1) #datos para graficar
-            self.fig_Frecuencias.draw()
-            print("frecuencia fundamental=",str(frec_fund))
 
-            # La frecuencia media de la voz masculina es de 106 Hz y con un rango de 77 Hz a 482 Hz.
-            # En cuanto a la voz femenina su frecuencia es de 193 Hz, con un rango de 137 Hz a 634 Hz. 
+        self.fig_Frecuencias.axes.clear()
+        self.fig_Frecuencias.axes.set_xlabel('Frecuencia')
+        self.fig_Frecuencias.axes.set_ylabel('Magnitud')
+        self.fig_Frecuencias.axes.set_title('Secuencia 1')
+        
+        x1,y1,frec_fund=self.audio.graficaFFT()#ademas se la grafica, regresa la frec fundamental
 
-            # El discurso sonoro de un hombre adulto típico tendrá una frecuencia 
-            # fundamental de 85 a 180 Hz, y el de una mujer adulta típica de 165 a 255 Hz.
-            if(1000>=frec_fund[0] and frec_fund[0]>=750):
-                print("A")
-                self.ui.label_Status.setText("A")
-            elif(750>frec_fund[0] and frec_fund[0]>=452):
-                print("E")
-                self.ui.label_Status.setText("E")
-            elif(452>frec_fund[0] and frec_fund[0]>=362):
-                print("O")
-                self.ui.label_Status.setText("O")
-            elif(362>frec_fund[0] and frec_fund[0]>=320):
-                print("I")
-                self.ui.label_Status.setText("I")    
-            elif(298>frec_fund[0] and frec_fund[0]>=0):
-                print("U")
-                self.ui.label_Status.setText("U")
-            else:
-                self.ui.label_Status.setText("No es posible analizarlo")
 
-        except Exception as e:
-            print("error en la grafica,"+str(e))
+        self.fig_Frecuencias.axes.plot(x1,y1) #datos para graficar
+        self.fig_Frecuencias.draw()
+        print("frecuencia fundamental=",str(frec_fund))
+
+
+        if self.ui.radioButton_Hombre.isChecked():
+            self.hombre(frec_fund)
+        elif self.ui.radioButton_Mujer.isChecked():
+            self.mujer(frec_fund)
+        else:
+            self.ui.label_Status.setText("No se ha seleccionado ningun genero")
+
+    def hombre(self,frec_fund):
+        if(1000>=frec_fund[0] and frec_fund[0]>=750):
+            print("A")
+            self.ui.label_Status.setText("A")
+        elif(750>frec_fund[0] and frec_fund[0]>=452):
+            print("E")
+            self.ui.label_Status.setText("E")
+        elif(452>frec_fund[0] and frec_fund[0]>=362):
+            print("O")
+            self.ui.label_Status.setText("O")
+        elif(362>frec_fund[0] and frec_fund[0]>=320):
+            print("I")
+            self.ui.label_Status.setText("I")    
+        elif(298>frec_fund[0] and frec_fund[0]>=0):
+            print("U")
+            self.ui.label_Status.setText("U")
+        else:
+            self.ui.label_Status.setText("No es posible analizarlo")
+
+    def mujer(self,frec_fund):
+        pass
 
 ##*****INICIO DE TODO EL PROGRAMA
 if __name__=='__main__':

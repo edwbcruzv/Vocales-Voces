@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1520</width>
-    <height>771</height>
+    <width>1123</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="font">
@@ -27,8 +27,8 @@
   <widget class="QPushButton" name="pushButton_Audio">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>50</y>
+     <x>40</x>
+     <y>350</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -40,23 +40,23 @@
   <widget class="QLabel" name="label_RutaAudio">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>50</y>
-     <width>891</width>
+     <x>220</x>
+     <y>360</y>
+     <width>491</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>...</string>
+    <string>Grabe Audio Primero</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_Evaluar">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>621</width>
-     <height>51</height>
+     <x>30</x>
+     <y>480</y>
+     <width>181</width>
+     <height>81</height>
     </rect>
    </property>
    <property name="text">
@@ -66,10 +66,10 @@
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>300</y>
-     <width>671</width>
-     <height>391</height>
+     <x>30</x>
+     <y>20</y>
+     <width>521</width>
+     <height>301</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_Audio">
@@ -84,9 +84,9 @@
   <widget class="QPushButton" name="pushButton_ReproducirAudio">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>220</y>
-     <width>351</width>
+     <x>40</x>
+     <y>410</y>
+     <width>151</width>
      <height>41</height>
     </rect>
    </property>
@@ -97,10 +97,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>790</x>
-     <y>300</y>
-     <width>669</width>
-     <height>389</height>
+     <x>570</x>
+     <y>20</y>
+     <width>521</width>
+     <height>301</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_Frecuencia">
@@ -115,14 +115,40 @@
   <widget class="QLabel" name="label_Status">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>150</y>
-     <width>481</width>
+     <x>260</x>
+     <y>510</y>
+     <width>461</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Resp</string>
+    <string>Resultado</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_Hombre">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>350</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hombre</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_Mujer">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>400</y>
+     <width>95</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Mujer</string>
    </property>
   </widget>
  </widget>
