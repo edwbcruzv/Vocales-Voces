@@ -1,6 +1,6 @@
-# Miniproyecto para La materia de señales 
+# Miniproyecto para e señales 
 
-ESCOM IPN
+Cursada con Jacqueline Arzate Gordillo en  ESCOM IPN
 
 ### Descripcion
 
